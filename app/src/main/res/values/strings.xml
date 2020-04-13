@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">FftSkooppi</string>
+    <string name="frequency_name">Taajuusväli</string>
+    <string name="start">Aloita</string>
+    <string name="stop">Lopeta</string>
+</resources>
