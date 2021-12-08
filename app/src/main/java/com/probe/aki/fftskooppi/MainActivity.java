@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
     private void writeAudioDataToFile() {
         short sData[] = new short[GraphView.FFTBUFFERSIZE];
 
-        while (isRecording) {
+        while (recorder != null) {
             recorder.read(sData, 0, GraphView.FFTBUFFERSIZE);
             graphview.setFft(sData);
         }
@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
     private void stopRecording() {
         // stops the recording activity
         if (null != recorder && isRecording) {
-            isRecording = false;
+//            isRecording = false;
 
             recorder.stop();
             recorder.release();
@@ -179,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btnStop: {
                     enableButtons(false);
                     stopRecording();
+                    isRecording = false;
                     break;
                 }
             }
